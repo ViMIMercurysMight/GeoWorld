@@ -323,15 +323,15 @@ INSERT INTO `country` (`country_id`, `code`, `name`, `official_name`, `iso3`, `n
 --
 
 --
--- Индексы таблицы `continents`
+-- Индексы таблицы `continent`
 --
-ALTER TABLE `continents`
+ALTER TABLE `continent`
   ADD PRIMARY KEY (`code`);
 
 --
--- Индексы таблицы `countries`
+-- Индексы таблицы `country`
 --
-ALTER TABLE `countries`
+ALTER TABLE `country`
   ADD PRIMARY KEY (`country_id`),
   ADD UNIQUE KEY `idx_code` (`code`) USING BTREE,
   ADD KEY `idx_continent_code` (`continent_code`) USING BTREE;
@@ -341,19 +341,19 @@ ALTER TABLE `countries`
 --
 
 --
--- AUTO_INCREMENT для таблицы `countries`
+-- AUTO_INCREMENT для таблицы `country`
 --
-ALTER TABLE `countries`
+ALTER TABLE `country`
   MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
 
 --
--- Ограничения внешнего ключа таблицы `countries`
+-- Ограничения внешнего ключа таблицы `country`
 --
-ALTER TABLE `countries`
-  ADD CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`continent_code`) REFERENCES `continents` (`code`) ON UPDATE CASCADE;
+ALTER TABLE `country`
+  ADD CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`continent_code`) REFERENCES `continent` (`code`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
