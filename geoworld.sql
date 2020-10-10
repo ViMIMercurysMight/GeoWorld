@@ -23,20 +23,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `continents`
+-- Структура таблицы `continent`
 --
 
-CREATE TABLE `continents` (
+CREATE TABLE `continent` (
   `code` char(2) NOT NULL COMMENT 'Continent code',
   `name` varchar(255) DEFAULT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
--- Дамп данных таблицы `continents`
+-- Дамп данных таблицы `continent`
 --
 
-INSERT INTO `continents` (`code`, `name`, `description`) VALUES
+INSERT INTO `continent` (`code`, `name`, `description`) VALUES
 ('AF', 'Africa', 'The world\'s second largest and second most-populous continent (the first being Asia in both categories)'),
 ('AN', 'Antarctica', 'Earth\'s southernmost continent. It contains the geographic South Pole and is situated in the Antarctic region of the Southern Hemisphere'),
 ('AS', 'Asia', 'Earth\'s largest and most populous continent, located primarily in the Eastern and Northern Hemispheres'),
@@ -48,10 +48,10 @@ INSERT INTO `continents` (`code`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `countries`
+-- Структура таблицы `country`
 --
 
-CREATE TABLE `countries` (
+CREATE TABLE `country` (
   `country_id` int(11) NOT NULL,
   `code` char(2) NOT NULL COMMENT 'Two-letter country code (ISO 3166-1 alpha-2)',
   `name` varchar(64) NOT NULL COMMENT 'English country name',
@@ -67,10 +67,10 @@ CREATE TABLE `countries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
--- Дамп данных таблицы `countries`
+-- Дамп данных таблицы `country`
 --
 
-INSERT INTO `countries` (`country_id`, `code`, `name`, `official_name`, `iso3`, `number`, `currency`, `capital`, `area`, `continent_code`, `coords`, `display_order`) VALUES
+INSERT INTO `country` (`country_id`, `code`, `name`, `official_name`, `iso3`, `number`, `currency`, `capital`, `area`, `continent_code`, `coords`, `display_order`) VALUES
 (1, 'AD', 'Andorra', 'Principality of Andorra', 'AND', 020, '[\"EUR\"]', 'Andorra la Vella', 468, 'EU', '[42.5,1.5]', 7),
 (2, 'AE', 'United Arab Emirates', 'United Arab Emirates', 'ARE', 784, '[\"AED\"]', 'Abu Dhabi', 83600, 'AS', '[24,54]', 232),
 (3, 'AF', 'Afghanistan', 'Islamic Republic of Afghanistan', 'AFG', 004, '[\"AFN\"]', 'Kabul', 652230, 'AS', '[33,65]', 3),
